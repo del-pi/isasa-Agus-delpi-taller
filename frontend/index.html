@@ -64,26 +64,61 @@
                   <div class="col-3">
                     <ul class="nav flex-column nav-pills">
                       <li class="nav-item mb-4">
-                        <a class="nav-link active"  data-bs-toggle="tab" href="#opcion1" >Opción 1</a>
+                        <a class="nav-link active"  data-bs-toggle="tab" href="#opcion1" >Recomendaciones samanales </a>
                       </li>
                       <li class="nav-item mb-4">
-                        <a class="nav-link"  data-bs-toggle="tab" href="#opcion2">Opción 2</a>
+                        <a class="nav-link"  data-bs-toggle="tab" href="#opcion2">Album del dia</a>
                       </li>
                       <li class="nav-item mb-4">
-                        <a class="nav-link"  data-bs-toggle="tab" href="#opcion3">Opción 3</a>
+                        <a class="nav-link"  data-bs-toggle="tab" href="#opcion3">Genero Aleatorio</a>
                       </li>
                     </ul>
                   </div>
                   <div class="col-9">
                   <div class="tab-content">
                     <div class="tab-pane fade show active" id="opcion1">
-                    hola 
+                      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="https://bloximages.chicago2.vip.townnews.com/thestar.com/content/tncms/assets/v3/editorial/a/df/adf7bfb8-92a4-11ef-8a90-8f3a011c5db5/671b4be244139.image.jpg?resize=400%2C400" class="d-block w-100" alt="Recomendación 1">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h1>Chromakopia</h1>
+                              <p>Algo nuevo de Tyler, the creator que es una escuha obligatoria.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://m.media-amazon.com/images/I/710b4gHtuJL._UF1000,1000_QL80_.jpg" class="d-block w-100" alt="Recomendación 2">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h1>Hatful of Hollow</h1>
+                              <p>Descripción de la recomendación 2.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://via.placeholder.com/800x400?text=Recomendación+3" class="d-block w-100" alt="Recomendación 3">
+                            <div class="carousel-caption d-none d-md-block">
+                              <h5>Recomendación 3</h5>
+                              <p>Descripción de la recomendación 3.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Controles del carrusel -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
                     </div>
                     <div class="tab-pane fade" id="opcion2" >
-                    pucho, gordo lolero
+                    
                     </div>
                     <div class="tab-pane fade" id="opcion3">
-                    feliz cumple mone
+                      <button id="randomGenreButton" class="btn btn-primary mb-3">Seleccionar Género Aleatorio</button>
+                      <h3 id="selectedGenre"></h3>
                     </div>
                   </div>
                   </div>
@@ -93,7 +128,39 @@
               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
                 crossorigin="anonymous"></script>
-            </body>
+                <script>
+                  // Lista de géneros
+const generos = [
+    "Rock",
+    "Jazz",
+    "Pop",
+    "Reggae",
+    "Bachata",
+    "Hip-hop",
+    "Blues",
+    "Electrónica",
+    "rock progresivo",
+    "jazz hip-hop",
+    "grunge",
+    "R&B",
+    "Salsa",
+    "New Wave",
+    "Indie"
+];
+
+// Función para seleccionar un género aleatorio
+function seleccionarGeneroAleatorio() {
+    const generoAleatorio = generos[Math.floor(Math.random() * generos.length)];
+    document.getElementById("selectedGenre").textContent = `Género seleccionado: ${generoAleatorio}`;
+}
+
+// Asocia la función al botón para que se ejecute al hacer clic
+document.getElementById("randomGenreButton").addEventListener("click", seleccionarGeneroAleatorio);
+
+                  </script>
+          
+            
+          </body>
             
             </html>
   

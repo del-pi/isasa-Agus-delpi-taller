@@ -18,3 +18,8 @@
         margin-left: 20px;
     }
 }
+
+#carouselExample .carousel-item img {
+    width: 100%;   /* Ajusta la imagen al ancho del contenedor */
+    height: 600px; /* Altura fija, ajústala a tu preferencia */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio */}
